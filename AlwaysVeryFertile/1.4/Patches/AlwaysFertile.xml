@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/StatDef[defName="Fertility"]/parts</xpath>
+        <value>
+            <parts>
+                <li Class="StatPart_FertilityByGenderAge">
+                    <maleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(18, 1)</li>
+                            <li>(50, 1)</li>
+                            <li>(90, 1)</li>
+                        </points>
+                    </maleFertilityAgeFactor>
+                    <femaleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(20, 1)</li>
+                            <li>(28, 1)</li>
+                            <li>(35, 1)</li>
+                            <li>(40, 1)</li>
+                            <li>(45, 1)</li>
+                            <li>(50, 1)</li>
+                        </points>
+                    </femaleFertilityAgeFactor>
+                </li>
+                <li Class="StatPart_FertilityByHediffs"/>
+            </parts>
+        </value>
+    </Operation>
+</Patch>
