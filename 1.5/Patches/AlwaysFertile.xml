@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/StatDef[defName="Fertility"]/parts</xpath>
+        <value>
+            <parts>
+                <li Class="StatPart_FertilityByGenderAge">
+                    <maleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(18, 1)</li>
+                            <li>(50, 1)</li>
+                            <li>(90, 1)</li>
+                        </points>
+                    </maleFertilityAgeFactor>
+                    <femaleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(20, 1)</li>
+                            <li>(28, 1)</li>
+                            <li>(35, 1)</li>
+                            <li>(40, 1)</li>
+                            <li>(45, 1)</li>
+                            <li>(50, 1)</li>
+                        </points>
+                    </femaleFertilityAgeFactor>
+                </li>
+                <li Class="StatPart_FertilityByHediffs"/>
+            </parts>
+        </value>
+    </Operation>
+
+        <!--Generic HAR patch-->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace/alienRace/generalSettings/reproduction</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/AlienRace.ThingDef_AlienRace/alienRace/generalSettings/reproduction</xpath>
+            <value>
+                <reproduction>
+                    <maleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(18, 1)</li>
+                            <li>(50, 1)</li>
+                            <li>(90, 1)</li>
+                        </points>
+                    </maleFertilityAgeFactor>
+                    <femaleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(20, 1)</li>
+                            <li>(28, 1)</li>
+                            <li>(35, 1)</li>
+                            <li>(40, 1)</li>
+                            <li>(45, 1)</li>
+                            <li>(50, 1)</li>
+                        </points>
+                    </femaleFertilityAgeFactor>
+                </reproduction>
+            </value>
+        </match>
+    </Operation>
+
+
+        <!--Specialized HAR patches-->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Dragon_Kilhn"]/alienRace/generalSettings/reproduction</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Dragon_Kilhn"]/alienRace/generalSettings/reproduction</xpath>
+            <value>
+                <reproduction>
+                    <maleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(100, 0.5)</li>
+                            <li>(150, 1)</li>
+                            <li>(350, 1)</li>
+                            <li>(750, 1)</li>
+                        </points>
+                    </maleFertilityAgeFactor>
+                    <femaleFertilityAgeFactor>
+                        <points>
+                            <li>(14, 0)</li>
+                            <li>(100, 0.5)</li>
+                            <li>(150, 1)</li>
+                            <li>(350, 1)</li>
+                            <li>(750, 1)</li>
+                        </points>
+                    </femaleFertilityAgeFactor>
+                </reproduction>
+            </value>
+        </match>
+    </Operation>
+</Patch>
